@@ -11,9 +11,11 @@ while True:
     match user_action:
         # Defines each case (scenario).
         case 'add':
-            todo = input("Enter a todo: ")
+            todo = input("Enter a todo: ") + "\n"
             # Takes data that is stored in variable "todo" and the appends to list names "todos".
             todos.append(todo)
+            file = open('todos.txt', 'w')
+            file.writelines(todos)
         case 'show':
             # Adds a numeric value to each item with the list "todos"
             for index, item in enumerate(todos):
