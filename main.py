@@ -17,15 +17,16 @@ while True:
             todos = file.readlines()
             file.close()
             for index, item in enumerate(todos):
+                item = item.strip('\n')
                 row = f"{index + 1}-{item}"
                 print(row)
         case 'edit':
             number = int(input("Number of the todo to edit: "))
             number = number - 1
-            new_todo = input("Enter new todo: ")            # The updates that index value with new item request in previous question.
+            new_todo = input("Enter new todo: ")            
             todos[number] = new_todo
         case 'complete':
-            number = int(input("Number of the todo to complete: "))            # Then removes the value linked to the index number.
+            number = int(input("Number of the todo to complete: "))      
             todos.pop(number -1)
         case 'exit':
             break
